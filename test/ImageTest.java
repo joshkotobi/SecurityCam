@@ -9,7 +9,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ImageTest {
-//    String testImageFilepath = ".\\photos\\FakeCameraPhotos\\1.jpg";
+    //    String testImageFilepath = ".\\photos\\FakeCameraPhotos\\1.jpg";
     private String testImageFilepath = "C:\\Users\\josh\\IdeaProjects\\SecurityCam\\photos\\FakeCameraPhotos\\1.jpg";
     private String savePath = "C:\\Users\\josh\\IdeaProjects\\SecurityCam\\photos\\SecurityCamStoredImages";
     private Image img = new Image(testImageFilepath);
@@ -37,5 +37,17 @@ class ImageTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    void getMatrix() {
+        int[][] matrix = img.getMatrix();
+        for(int j=0; j<matrix.length; j++){
+            for(int i=0; i<matrix[j].length; i++){
+                System.out.print(matrix[j][i] + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+
 
 }

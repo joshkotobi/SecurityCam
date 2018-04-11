@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +43,21 @@ public class Image {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public int[][] getMatrix(){
+        int height = img.getHeight();
+        int width = img.getWidth();
+        int[][] returnMatrix = new int[height][width];
+        Color pixelColor;
+
+        for(int j=0; j<height; j++){
+            for(int i=0; i<width; i++){
+                pixelColor = new Color(img.getRGB(i,j));
+                returnMatrix[j][i] = (pixelColor.getBlue() + pixelColor.getRed() + pixelColor.getGreen())/3;  // average the three colors to get some gray value
+            }
+        }
+        return returnMatrix;
     }
 
     // getters and setters
