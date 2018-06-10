@@ -1,7 +1,6 @@
 import java.io.File;
 
 public class FakeCamera extends Camera {
-//    String imageFolderPath = "C:\\Users\\josh\\Documents\\programming\\java\\CameraProject\\photos\\FakeCameraPhotos";
     private String rootImageFolderPath;
     private File[] imageFilepaths;
     private int imgCounter=0;  // keep track of which image the camera is about to output
